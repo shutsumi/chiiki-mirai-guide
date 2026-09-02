@@ -1,0 +1,271 @@
+<title>このガイドの使い方</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>:root{
+ --ground:#f4f9fd;--surface:#fff;--surf2:#ebf8ff;--line:#dbe7f2;--line2:#c2d5e8;
+ --ink:#333;--ink2:#5b6675;--ink3:#8b95a3;
+ --ac:#1941a0;--ac2:#2a5bc7;--acs:#ebf8ff;--onac:#fff;
+ --hl:#ffef35;
+ --ev:#c07d05;--evs:#fff6e3;--evl:#f2cf8e;
+ --ok:#1f7a4d;--okb:#e3f2ea;--okl:#a8d5bd;
+ --pv:#9a6b12;--pvb:#fbf0d9;--pvl:#e4ce9c;
+ --nn:#7e8794;--nnb:#eef2f6;--nnl:#d9e1ea;
+ --sh:0 1px 2px rgba(25,65,160,.06),0 10px 30px -22px rgba(25,65,160,.45);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --ground:#0f1621;--surface:#16202e;--surf2:#1c2836;--line:#26344a;--line2:#33465f;
+ --ink:#e8eef5;--ink2:#a3b0c0;--ink3:#7a8797;
+ --ac:#7ab0ee;--ac2:#9bc6f5;--acs:#132846;--onac:#0f1621;
+ --hl:#ffef35;
+ --ev:#e8ae3f;--evs:#2e2413;--evl:#4d3d1e;
+ --ok:#6cc79a;--okb:#14291f;--okl:#284a37;
+ --pv:#d7ae5c;--pvb:#2c2515;--pvl:#493d20;
+ --nn:#8b95a3;--nnb:#1b2431;--nnl:#2f3c4d;
+ --sh:0 1px 2px rgba(0,0,0,.5),0 10px 30px -22px rgba(0,0,0,.9);
+}}
+:root[data-theme="dark"]{
+ --ground:#0f1621;--surface:#16202e;--surf2:#1c2836;--line:#26344a;--line2:#33465f;
+ --ink:#e8eef5;--ink2:#a3b0c0;--ink3:#7a8797;
+ --ac:#7ab0ee;--ac2:#9bc6f5;--acs:#132846;--onac:#0f1621;
+ --hl:#ffef35;
+ --ev:#e8ae3f;--evs:#2e2413;--evl:#4d3d1e;
+ --ok:#6cc79a;--okb:#14291f;--okl:#284a37;
+ --pv:#d7ae5c;--pvb:#2c2515;--pvl:#493d20;
+ --nn:#8b95a3;--nnb:#1b2431;--nnl:#2f3c4d;
+ --sh:0 1px 2px rgba(0,0,0,.5),0 10px 30px -22px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+ font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;
+ font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Zen Maru Gothic","Noto Sans JP",sans-serif;font-weight:700;margin:0;text-wrap:balance}
+a{color:var(--ac)}a:hover{color:var(--ac2)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.head{padding:38px 0 26px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
+.eyebrow{font-size:11.5px;letter-spacing:.16em;color:var(--ac);font-weight:700;margin-bottom:9px}
+h1{font-size:clamp(25px,4vw,36px);line-height:1.3}
+.sub{color:var(--ink2);font-size:14.3px;margin:11px 0 0;max-width:62ch}
+.stamp{font-size:12.5px;color:var(--ink3);text-align:right;line-height:1.9;white-space:nowrap}
+.stamp b{display:block;color:var(--ink);font-size:14px}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none;
+ border:1px solid var(--line2);border-radius:999px;padding:6px 14px;color:var(--ink2);margin-bottom:16px}
+.back:hover{border-color:var(--ac);color:var(--ac)}
+.ctrl{display:flex;flex-wrap:wrap;gap:9px;align-items:center;padding:18px 0 4px}
+select,input[type=search]{font:inherit;font-size:13.4px;color:var(--ink);background:var(--surface);
+ border:1px solid var(--line2);border-radius:7px;padding:8px 11px;min-height:38px}
+input[type=search]{flex:1;min-width:180px}
+select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.rst{font:inherit;font-size:13px;background:none;border:1px solid var(--line2);border-radius:7px;
+ padding:8px 12px;color:var(--ink2);cursor:pointer;min-height:38px}
+.rst:hover{border-color:var(--ac);color:var(--ac)}
+.cnt{margin-left:auto;font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.empty{padding:50px 20px;text-align:center;color:var(--ink3)}
+footer{margin-top:54px;border-top:1px solid var(--line);background:var(--surface)}
+.foot{padding:30px 0 48px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.foot h3{font-size:14px;margin-bottom:8px}
+.foot p,.foot li{font-size:13px;color:var(--ink2);margin:0 0 6px}
+.foot ul{margin:0;padding-left:1.1em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* --- 地域みらい留学トンマナ：イエローのラベル・ネイビーの塗りボタン --- */
+.eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.13em;font-weight:700;
+ color:#1b3a76;background:var(--hl);border-radius:999px;padding:3px 13px;margin-bottom:11px}
+.back{border-radius:999px}
+
+main{padding-bottom:10px}
+.sec{margin:38px 0 0}
+.sec>h2{font-size:21px;margin-bottom:6px}
+.sec>.lead{font-size:14px;color:var(--ink2);margin:0 0 18px;max-width:74ch}
+.map{display:grid;gap:12px;grid-template-columns:1fr;margin-top:4px}
+.mcard{border:1px solid var(--line);border-radius:11px;background:var(--surface);padding:16px 18px;box-shadow:var(--sh)}
+.mcard.main{border-color:var(--ac);border-width:2px}
+.mtop{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.mico{font-size:22px;line-height:1}
+.mcard h3{font-size:15.5px}
+.mcard .role{font-size:11.5px;font-weight:700;color:var(--ac);border:1px solid var(--ac);
+ border-radius:999px;padding:2px 9px;white-space:nowrap}
+.mcard p{font-size:13.2px;color:var(--ink2);margin:9px 0 0;line-height:1.7}
+.mcard .go{display:inline-block;margin-top:11px;font-size:13px;text-decoration:none;font-weight:700}
+.sub2{margin-left:26px;border-left:2px solid var(--line2);padding-left:20px;display:grid;gap:12px}
+@media(min-width:820px){.map{grid-template-columns:1fr}.sub2{margin-left:34px}}
+.steps{counter-reset:s;display:grid;gap:14px}
+.step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.step .num{counter-increment:s;width:28px;height:28px;border-radius:50%;background:var(--ac);color:var(--onac);
+ display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:1px}
+.step .num::before{content:counter(s)}
+.step h4{font-size:14.6px;margin-bottom:4px}
+.step p{font-size:13.3px;color:var(--ink2);margin:0;line-height:1.75}
+.step .kbd{display:inline-block;border:1px solid var(--line2);border-radius:6px;padding:1px 7px;
+ font-size:12.4px;background:var(--surf2);color:var(--ink);white-space:nowrap;margin:0 1px}
+.case{border:1px solid var(--line);border-radius:11px;background:var(--surface);padding:18px 20px 20px;box-shadow:var(--sh)}
+.cases{display:grid;gap:14px}
+@media(min-width:900px){.cases{grid-template-columns:repeat(3,1fr)}}
+.case h3{font-size:15.5px;margin-bottom:3px}
+.case .who{font-size:12px;color:var(--ac);font-weight:700;margin-bottom:12px}
+.case ol{margin:0;padding-left:1.15em;font-size:13.2px;color:var(--ink2);line-height:1.8}
+.case ol li+li{margin-top:7px}
+.case b{color:var(--ink)}
+.qa{border-top:1px solid var(--line);padding:16px 0 2px}
+.qa:first-of-type{border-top:0}
+.qa h4{font-size:14.6px;margin-bottom:6px}
+.qa p{font-size:13.3px;color:var(--ink2);margin:0 0 8px;line-height:1.75;max-width:76ch}
+.qa p:last-child{margin-bottom:0}
+.key{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.k{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:8px;
+ padding:7px 11px;font-size:12.6px;background:var(--surface)}
+.k i{width:11px;height:11px;border-radius:50%;border:1px solid;display:inline-block}
+.k b.bar{width:22px;height:11px;border-radius:6px;border:1px solid;display:inline-block}
+.warn{border-left:3px solid var(--ev);background:var(--evs);border-radius:0 9px 9px 0;padding:14px 18px;margin-top:14px}
+.warn p{font-size:13.2px;color:var(--ink);margin:0;line-height:1.75}
+.warn b{font-weight:700}
+</style>
+
+<header><div class="wrap">
+ <div class="head">
+  <div>
+   <a class="back" href="index.html">← 今日から出願までの完全ガイドに戻る</a>
+   <div class="eyebrow">地域みらい留学 参画校</div>
+   <h1>このガイドの使い方</h1>
+   <p class="sub">はじめての方向けの説明書です。4つのページがどうつながっているか、いまの自分は何から見ればいいかを1枚にまとめました。読むのに5分もかかりません。</p>
+  </div>
+  <div class="stamp"><b>2026年9月2日 時点</b>毎週水曜・日曜に更新</div>
+ </div>
+</div></header>
+
+<main class="wrap">
+
+<div class="sec">
+ <h2>まず、何ができるページなのか</h2>
+ <p class="lead">都道府県をこえて進学できる公立高校 <b>189校</b> を、ひとつの場所で見比べられるようにしたページです。学校の中身だけでなく、<b>いつまでに何をすればいいか</b>という日程まで載せているのが他のサイトとの違いです。</p>
+ <div class="map">
+  <div class="mcard main">
+   <div class="mtop"><span class="mico">🏫</span><h3>今日から出願までの完全ガイド</h3><span class="role">ここが入口</span></div>
+   <p>189校の一覧と、各校のくわしい情報。ページのいちばん上に「今日から願書提出までにやること」のスケジュール表があります。学校名をクリックすると、特長・部活・説明会の予定・寮の手続き・在校生の記事や動画・連絡先が開きます。</p>
+   <a class="go" href="index.html">開く →</a>
+  </div>
+  <div class="sub2">
+   <div class="mcard">
+    <div class="mtop"><span class="mico">📅</span><h3>オープンスクール&説明会カレンダー</h3></div>
+    <p>これから参加できる <b>408件</b>（138校）を日付順に。月・都道府県・オンラインかどうかで絞れます。「申し込む」から地域みらい留学の申込ページへ直行できます。</p>
+    <a class="go" href="events.html">開く →</a>
+   </div>
+   <div class="mcard">
+    <div class="mtop"><span class="mico">📊</span><h3>オープンスクール&説明会 ガントチャート</h3></div>
+    <p>同じ予定を、縦に高校・横に日付で並べた図。<b>どの学校がいつ開催するか</b>を俯瞰でき、日程が重なっている学校や、機会が1回しかない学校が見つかります。</p>
+    <a class="go" href="gantt.html">開く →</a>
+   </div>
+   <div class="mcard">
+    <div class="mtop"><span class="mico">🏠</span><h3>寮の手続き期間カレンダー</h3></div>
+    <p>寮・下宿の申込が<b>いつ始まっていつ締め切られるか</b>。189校すべてを、日程が分かっている学校から順に並べています。まだ公表されていない学校は電話番号を載せています。</p>
+    <a class="go" href="dorm.html">開く →</a>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="sec">
+ <h2>いまの自分に合う進み方</h2>
+ <p class="lead">3つのうち、いちばん近いものから読んでください。</p>
+ <div class="cases">
+  <div class="case">
+   <h3>まだ何も決まっていない</h3>
+   <div class="who">学校を知るところから</div>
+   <ol>
+    <li>ガイドの<b>「学校をさがす」</b>で、特徴のプルダウンから気になるテーマを選ぶ。「島ぐらし」「英語・国際系」「動物・畜産系」など<b>26種類</b>あります</li>
+    <li>気になった学校をクリックして、<b>「この学校の記事・動画」</b>を見る。実際に留学した先輩が語る動画や、在校生が書いたnoteが読めます</li>
+    <li><b>オンラインの説明会</b>に申し込む。408件のうち327件がオンラインなので、家から参加できます</li>
+   </ol>
+  </div>
+  <div class="case">
+   <h3>気になる学校が何校かある</h3>
+   <div class="who">絞り込んでいく時期</div>
+   <ol>
+    <li><b>ガントチャート</b>で候補校の予定を見比べる。同じ日に重なっていないか、機会が何回あるかが分かります</li>
+    <li>現地のオープンスクールに行く。<b>寮の見学がセット</b>になっていることが多く、学校によっては参加が入寮面談の条件になります</li>
+    <li><b>寮の手続きカレンダー</b>で候補校を検索し、申込の締切を確認する。未公表なら電話で聞く</li>
+   </ol>
+  </div>
+  <div class="case">
+   <h3>もう受ける学校を決めた</h3>
+   <div class="who">手続きを落とさない</div>
+   <ol>
+    <li>ガイドの<b>スケジュール表</b>で、いまの時期にやることを確認する</li>
+    <li><b>寮の申込</b>は入試とは別の手続きです。締切が入試よりずっと早い学校があります</li>
+    <li>県外から受ける場合は<b>志願承認</b>の手続きが要ります。中学校の先生に早めに相談してください</li>
+   </ol>
+  </div>
+ </div>
+</div>
+
+<div class="sec">
+ <h2>ガイドの見かた</h2>
+ <div class="steps">
+  <div class="step"><div class="num"></div><div>
+   <h4>スケジュール表で、いまの位置を知る</h4>
+   <p>ページの上のほうにある帯グラフです。縦線が「今日」の位置なので、その線がどの帯に重なっているかを見てください。<b>藍＝学校を知る／朱＝寮・下宿の手続き／緑＝出願・入試</b>の3色に分かれています。帯の下の文章に書いてある学校名は、重要な学校という意味ではなく、<b>日付が判明している数少ない学校の例</b>です。</p>
+  </div></div>
+  <div class="step"><div class="num"></div><div>
+   <h4>学校を絞り込む</h4>
+   <p>「学校をさがす」に4つの絞り込みがあります。<span class="kbd">都道府県</span><span class="kbd">特徴</span><span class="kbd">住まい</span>のプルダウンと、学校名・学科・部活で探せる検索窓です。住まいは<b>寮・シェアハウス・ホームステイ・一人暮らし</b>の4種類。<span class="kbd">説明会あり</span>を押すと、これから参加できる学校だけに絞れます。</p>
+  </div></div>
+  <div class="step"><div class="num"></div><div>
+   <h4>学校をクリックして中を見る</h4>
+   <p>いちばん上に<b>公式サイト・地図・電話番号・SNS</b>のボタンが並んでいます。その下に学費や生活費、学校の特長、部活、説明会の予定、寮の手続き、記事や動画が続きます。記事と動画は全体で<b>891件</b>あり、189校すべてに1件以上入っています。</p>
+  </div></div>
+ </div>
+</div>
+
+<div class="sec">
+ <h2>記号の意味</h2>
+ <p class="lead">カレンダーで使っている印です。</p>
+ <div class="key">
+  <span class="k"><i style="background:var(--acs);border-color:var(--ac)"></i>オンライン開催</span>
+  <span class="k"><i style="background:var(--evs);border-color:var(--ev)"></i>現地開催</span>
+  <span class="k"><b class="bar" style="background:var(--okb);border-color:var(--ok)"></b>令和9年度の確定日程</span>
+  <span class="k"><b class="bar" style="background:var(--pvb);border-color:var(--pv)"></b>前年度以前の実績（目安）</span>
+  <span class="k"><i style="background:var(--okb);border-color:var(--ok)"></i>締切日だけ判明</span>
+ </div>
+</div>
+
+<div class="sec">
+ <h2>つまずきやすいところ</h2>
+ <div class="qa">
+  <h4>寮の日程が「未公開」ばかりなのはなぜ？</h4>
+  <p>189校のうち日程が分かっているのは<b>12校</b>だけで、<b>177校</b>は公表されていません。調べ漏れではありません。寮を運営しているのが高校ではなく町や地域の団体であることが多く、日程が説明会や個別相談の場で伝えられているためです。各校のサイト・自治体・県教育委員会・県の留学ポータルまで当たった結果です。</p>
+  <p>未公表の学校は、寮カレンダーで行をクリックすると<b>電話番号</b>が出ます。そこに直接聞くのが確実です。令和9年度の募集要項は秋から冬にかけて順次公表されるので、このページも毎週更新して反映していきます。</p>
+ </div>
+ <div class="qa">
+  <h4>「随時受付」と書いてある説明会は？</h4>
+  <p>日付が便宜上のもので、<b>いつでも申し込める</b>という意味です。カレンダーでは近い日付の位置に置いてありますが、その日を過ぎても参加できます。</p>
+ </div>
+ <div class="qa">
+  <h4>寮の申込は入試の出願と同じもの？</h4>
+  <p>別のものです。多くの学校で<b>寮の申込のほうが先</b>に締め切られます。上川高校は下宿の申込が11月13日まで、入試の出願は年明けです。寮は入試の定員とは別枠で、先に埋まることもあります。</p>
+ </div>
+ <div class="qa">
+  <h4>オンラインと現地、どちらに行けばいい？</h4>
+  <p>まずはオンラインで十分です。ただし<b>入寮を希望するなら現地に行ったほうがいい</b>学校があります。神山校のように、現地ツアーへの参加が入寮面談を受ける条件になっている例があるためです。候補が絞れてきたら、現地開催の回を探してください。</p>
+ </div>
+</div>
+
+<div class="warn">
+ <p><b>日程は変わることがあります。</b>申し込む前・手続きする前に、必ず学校または地域みらい留学の公式ページで最新の情報を確認してください。このガイドに載せている日付は、出典が確認できたものだけです。推定は載せていません。</p>
+</div>
+
+</main>
+
+<footer><div class="wrap"><div class="foot">
+ <div><h3>更新のタイミング</h3>
+  <p>毎週水曜と日曜の朝に自動で更新しています。説明会の予定、在校生の記事や動画、寮の日程が新しく公表されたぶんが入ります。URLは変わらないので、ブックマークしておけば常に最新版が開きます。</p></div>
+ <div><h3>情報のもと</h3>
+  <p>地域みらい留学の公式サイトに載っている189校の情報をもとに、各校の公式サイト・自治体・県教育委員会で日程を確認してまとめています。記事や動画は、各校の公式noteやYouTube、地域みらい留学マガジン、しまね留学・こうち留学などの県ポータル、新聞や地域メディアの取材記事から集めています。</p></div>
+ <div><h3>4つのページ</h3>
+  <ul>
+   <li><a href="index.html">今日から出願までの完全ガイド</a></li>
+   <li><a href="events.html">オープンスクール&説明会カレンダー</a></li>
+   <li><a href="gantt.html">オープンスクール&説明会 ガントチャート</a></li>
+   <li><a href="dorm.html">寮の手続き期間カレンダー</a></li>
+  </ul></div>
+</div></div></footer>
