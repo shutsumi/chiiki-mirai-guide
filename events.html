@@ -5,35 +5,35 @@
 <style>:root{
  --ground:#f4f9fd;--surface:#fff;--surf2:#ebf8ff;--line:#dbe7f2;--line2:#c2d5e8;
  --ink:#333;--ink2:#5b6675;--ink3:#8b95a3;
- --ac:#1941a0;--ac2:#2a5bc7;--acs:#ebf8ff;--onac:#fff;
+ --ac:#1941a0;--ac2:#2a5bc7;--acs:#ebf8ff;--onac:#fff;--cardline:#1941a0;
  --hl:#ffef35;
- --ev:#c07d05;--evs:#fff6e3;--evl:#f2cf8e;
- --ok:#1f7a4d;--okb:#e3f2ea;--okl:#a8d5bd;
- --pv:#9a6b12;--pvb:#fbf0d9;--pvl:#e4ce9c;
+ --ev:#f6a811;--evs:#fff6e3;--evl:#f2cf8e;
+ --ok:#3d85c6;--okb:#e8f1fa;--okl:#a9c9e6;
+ --pv:#b5790a;--pvb:#fff6e3;--pvl:#f2cf8e;
  --nn:#7e8794;--nnb:#eef2f6;--nnl:#d9e1ea;
- --sh:0 1px 2px rgba(25,65,160,.06),0 10px 30px -22px rgba(25,65,160,.45);
+ --sh:none;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
  --ground:#0f1621;--surface:#16202e;--surf2:#1c2836;--line:#26344a;--line2:#33465f;
  --ink:#e8eef5;--ink2:#a3b0c0;--ink3:#7a8797;
- --ac:#7ab0ee;--ac2:#9bc6f5;--acs:#132846;--onac:#0f1621;
+ --ac:#7ab0ee;--ac2:#9bc6f5;--acs:#132846;--onac:#0f1621;--cardline:#3a5578;
  --hl:#ffef35;
  --ev:#e8ae3f;--evs:#2e2413;--evl:#4d3d1e;
- --ok:#6cc79a;--okb:#14291f;--okl:#284a37;
+ --ok:#7fb2e0;--okb:#14263a;--okl:#2c445f;
  --pv:#d7ae5c;--pvb:#2c2515;--pvl:#493d20;
  --nn:#8b95a3;--nnb:#1b2431;--nnl:#2f3c4d;
- --sh:0 1px 2px rgba(0,0,0,.5),0 10px 30px -22px rgba(0,0,0,.9);
+ --sh:none;
 }}
 :root[data-theme="dark"]{
  --ground:#0f1621;--surface:#16202e;--surf2:#1c2836;--line:#26344a;--line2:#33465f;
  --ink:#e8eef5;--ink2:#a3b0c0;--ink3:#7a8797;
- --ac:#7ab0ee;--ac2:#9bc6f5;--acs:#132846;--onac:#0f1621;
+ --ac:#7ab0ee;--ac2:#9bc6f5;--acs:#132846;--onac:#0f1621;--cardline:#3a5578;
  --hl:#ffef35;
  --ev:#e8ae3f;--evs:#2e2413;--evl:#4d3d1e;
- --ok:#6cc79a;--okb:#14291f;--okl:#284a37;
+ --ok:#7fb2e0;--okb:#14263a;--okl:#2c445f;
  --pv:#d7ae5c;--pvb:#2c2515;--pvl:#493d20;
  --nn:#8b95a3;--nnb:#1b2431;--nnl:#2f3c4d;
- --sh:0 1px 2px rgba(0,0,0,.5),0 10px 30px -22px rgba(0,0,0,.9);
+ --sh:none;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);
@@ -135,6 +135,21 @@ footer{margin-top:54px;border-top:1px solid var(--line);background:var(--surface
  .row{grid-template-columns:56px 1fr;gap:10px}
  .go{grid-column:2;justify-self:start;margin-top:4px}
 }
+
+/* ===== トンマナ.md 準拠の上書き（地域みらい留学 c-mirai.jp/nyushi） ===== */
+body{font-weight:500}
+h1,h2,h3,h4{letter-spacing:.1em}
+.eyebrow,.howto,.go,.maplink,.bna,.mgo,.btn,.rst,.back,.lk,.role,.who{letter-spacing:.1em}
+
+/* カード＝白地＋ネイビー枠＋角丸10px＋影なし */
+.card,.gantt,.bn,.mcard,.case,.tl,.twrap,.row,.mapcard,.mapbox,.dorm,.mrow,.stats,.fgrid,.panel,.k,.ev{
+ border-color:var(--cardline);box-shadow:none}
+.card,.gantt,.bn,.mcard,.case,.tl,.twrap,.row,.mapcard,.mapbox,.dorm,.mrow,.k,.stats,.fgrid{border-radius:10px}
+.card:hover,.mrow:hover,.row:hover,.bn:hover,.mapcard:hover,.ev:hover{box-shadow:none;transform:none}
+
+/* 角丸は10pxとピルの2種類に寄せる */
+.lk,.btn,.rst,.close,select,input[type=search],.tag,.kbd{border-radius:10px}
+.lk,.btn{border-color:var(--cardline);color:var(--ac)}
 </style>
 
 <header><div class="wrap">
